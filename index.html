@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Inventory & Sales Blog</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #102a43;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h2 {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #102a43, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #38bdf8;
+            color: #102a43;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+        section {
+            padding: 60px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 35px;
+            color: #102a43;
+        }
+
+        .about {
+            background: white;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            height: 160px;
+            background: linear-gradient(135deg, #2563eb, #06b6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 55px;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-content h3 {
+            color: #102a43;
+            margin-bottom: 12px;
+        }
+
+        .blog-content p {
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            color: #2563eb;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .features {
+            background: #eaf2ff;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .feature-box h3 {
+            margin: 12px 0;
+            color: #102a43;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+        }
+
+        .contact {
+            background: white;
+            text-align: center;
+        }
+
+        .contact form {
+            max-width: 500px;
+            margin: 25px auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: Arial, sans-serif;
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .contact button {
+            background: #2563eb;
+            color: white;
+            width: 100%;
+        }
+
+        .contact button:hover {
+            background: #102a43;
+            color: white;
+        }
+
+        footer {
+            background: #102a43;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <h2>InventoryBlog</h2>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#blogs">Blogs</a>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home -->
+    <div class="hero" id="home">
+        <h1>Digital Inventory & Sales Management</h1>
+
+        <p>
+            Explore smart inventory solutions, modern sales
+            management techniques, and digital tools that
+            help businesses grow efficiently.
+        </p>
+
+        <a href="#blogs" class="btn">Explore Blogs</a>
+    </div>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <h2 class="section-title">About This Blog</h2>
+
+        <p>
+            Welcome to InventoryBlog!
+
+            This blog shares information about digital inventory
+            and sales management systems.
+
+            Our goal is to explain how businesses can manage
+            products, monitor stock levels, track sales,
+            and generate reports using digital technology.
+
+            This website is part of an educational project
+            focused on improving business management.
+        </p>
+    </section>
+
+    <!-- Blogs -->
+    <section id="blogs">
+        <h2 class="section-title">Latest Blog Posts</h2>
+
+        <div class="blog-container">
+
+            <div class="blog-card">
+                <div class="blog-image">📦</div>
+
+                <div class="blog-content">
+                    <h3>What is Digital Inventory Management?</h3>
+
+                    <p>
+                        Learn how digital inventory systems
+                        help businesses track products,
+                        manage stock, and reduce manual work.
+                    </p>
+
+                    <a href="#" class="read-more"
+                       onclick="showBlog(1); return false;">
+                        Read More →
+                    </a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">📊</div>
+
+                <div class="blog-content">
+                    <h3>Importance of Sales Tracking</h3>
+
+                    <p>
+                        Discover how sales tracking helps
+                        businesses understand revenue,
+                        customer demand, and performance.
+                    </p>
+
+                    <a href="#" class="read-more"
+                       onclick="showBlog(2); return false;">
+                        Read More →
+                    </a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">💻</div>
+
+                <div class="blog-content">
+                    <h3>Benefits of Inventory Automation</h3>
+
+                    <p>
+                        Explore how automation reduces
+                        errors, saves time, and improves
+                        business productivity.
+                    </p>
+
+                    <a href="#" class="read-more"
+                       onclick="showBlog(3); return false;">
+                        Read More →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <h2 class="section-title">System Features</h2>
+
+        <div class="feature-grid">
+
+            <div class="feature-box">
+                <div class="feature-icon">📦</div>
+                <h3>Stock Management</h3>
+                <p>
+                    Monitor available products and
+                    maintain accurate stock records.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">💰</div>
+                <h3>Sales Management</h3>
+                <p>
+                    Track daily sales and maintain
+                    transaction information.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">📈</div>
+                <h3>Sales Reports</h3>
+                <p>
+                    Analyze business performance
+                    using sales reports.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">🔔</div>
+                <h3>Low Stock Alerts</h3>
+                <p>
+                    Identify products that need
+                    restocking.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+
+        <p>
+            Have questions about inventory and sales management?
+            Send us a message!
+        </p>
+
+        <form onsubmit="sendMessage(event)">
+            <input type="text"
+                   placeholder="Your Name"
+                   required>
+
+            <input type="email"
+                   placeholder="Your Email"
+                   required>
+
+            <textarea
+                placeholder="Your Message"
+                required></textarea>
+
+            <button type="submit" class="btn">
+                Send Message
+            </button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; 2026 InventoryBlog |
+            Digital Inventory & Sales Management System
+        </p>
+        <p>Designed for Educational Purposes</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function showBlog(id) {
+            let title = "";
+            let content = "";
+
+            if (id === 1) {
+                title = "Digital Inventory Management";
+
+                content =
+                    "Digital inventory management is the process " +
+                    "of tracking and managing products using " +
+                    "computer software. It helps businesses " +
+                    "monitor stock availability, organize " +
+                    "product information, and reduce errors.";
+            }
+
+            else if (id === 2) {
+                title = "Sales Tracking";
+
+                content =
+                    "Sales tracking is the process of recording " +
+                    "and analyzing business transactions. " +
+                    "It helps businesses monitor revenue, " +
+                    "identify popular products, and make " +
+                    "better business decisions.";
+            }
+
+            else if (id === 3) {
+                title = "Inventory Automation";
+
+                content =
+                    "Inventory automation uses digital tools " +
+                    "to simplify stock management. " +
+                    "It reduces manual calculations, " +
+                    "improves accuracy, and saves time.";
+            }
+
+            alert(title + "\n\n" + content);
+        }
+
+        function sendMessage(event) {
+            event.preventDefault();
+
+            alert(
+                "Thank you! This is a demo contact form. " +
+                "No message has been sent."
+            );
+
+            event.target.reset();
+        }
+    </script>
+
+</body>
+</html>
